@@ -109,3 +109,6 @@ body {
 option{
   font-size: 24px
 }
+.box-content{
+    margin: 50px;
+}
