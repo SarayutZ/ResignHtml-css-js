@@ -3,274 +3,33 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
     <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
       rel="stylesheet"
-      integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
+      integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
       crossorigin="anonymous"
     />
-
-    <title>ลาออก</title>
+    <link rel="stylesheet" href="remakeV2.css" />
+    <title>Document</title>
   </head>
   <body>
-    <div class="head-form">
+    <div class="head">
+
       <img
         src="https://upload.wikimedia.org/wikipedia/th/thumb/b/b7/MJU_LOGO.svg/1200px-MJU_LOGO.svg.png"
         alt=""
         srcset=""
       />
+
       <h3>คำร้องลาออก</h3>
+      
     </div>
 
-    <div class="container">
-      <div class="box-content">
-        <form action="submit.html">
-          <div class="head-subject">
-            <h2  >เรื่อง ลาออก</h2>
-          </div>
 
-          <label for="day">วันที่</label>
-          <input type="date" name="date" required />
-          <div class="head-name">
-            <label for="fname">ข้าพเจ้า</label>
-
-            <input type="radio" name="title" required />
-            <label for="">นาย</label>
-
-            <input type="radio" name="title" required />
-            <label for="">นาง</label>
-
-            <input type="radio" name="title" required />
-            <label for="">นางสาว </label>
-            <label for="">ชื่อ-นามสกุล</label>
-            <input
-              type="text"
-              name="other_title"
-              pattern="[ก-๙a-zA-Zะ-์]*\s[ก-๙a-zA-Zะ-์]*(\s[ก-๙a-zA-Zะ-์]*)?"
-              title="กรุณากรอกภาษาไทยหรืออังกฤษเท่านั้น ตัวเลขไม่เอา และ ให้เว้น ชื่อ กับ ชื่อ กับ นามสกุล ด้วย"
-              maxlength="40"
-            />
-            <!-- ไว้กำหนด ว่า ให้มัน มี ชื่อ นามสุกล แบบ เว้นช่อง กัน และ กำหนดให้ เป็น ภาษาไทย และ eng เท่านั้น -->
-
-            <label for="student_id">รหัสนักศึกษา</label>
-            <input
-              type="text"
-              id="student_id"
-              name="student_id"
-              pattern="[0-9]{10,10}"
-              title="กรุณากรอกรหัสนักศึกษาเป็นตัวเลขไม่เกิน 10 ตัว หรือ น้อยกว่า 10 "
-              required
-            />
-            <!-- กำหนดให้ใช้เลข 0-9 และ กำหนดให้มี 10 ตัว คือไม่น้อยกว่า 10 ไม่มากกว่า 10 -->
-          </div>
-
-          <div class="head-name">
-            <label for="faculty">คณะ</label>
-            <select id="faculties" required>
-                <option value="" disabled selected>-</option>
-              <option value="1">คณะผลิตกรรมการเกษตร</option>
-              <option value="2">คณะวิศวกรรมและอุตสาหกรรมเกษตร</option>
-              <option value="3">คณะวิทยาศาสตร์</option>
-              <option value="4">วิทยาลัยบริหารศาสตร์</option>
-              <option value="5">คณะบริหารธุรกิจ</option>
-              <option value="6">คณะพัฒนาการท่องเที่ยว</option>
-              <option value="7">คณะเทคโนโลยีการประมงและทรัพยากรทางน้ำ</option>
-              <option value="8">คณะเศรษฐศาสตร์</option>
-              <option value="9">คณะศิลปศาสตร์</option>
-              <option value="10">วิทยาลัยพลังงานทดแทน</option>
-              <option value="11">คณะสารสนเทศและการสื่อสาร</option>
-              <option value="12">
-                คณะสถาปัตยกรรมศาสตร์และการออกแบบสิ่งแวดล้อม
-              </option>
-              <option value="13">คณะสัตวศาสตร์และเทคโนโลยี</option>
-            </select>
-            <!-- 
-          <div id="branch-box" class="branch-box mt-3">
-            <label id="branch-label"  >สาขา</label>
-            <div id="branch-container"></div>
-          </div> -->
-
-            <!-- <input 
-            type="text"
-            id="branch"
-            name="branch"
-            pattern="[ก-๙]*"
-            title="กรุณากรอกภาษาไทยหรืออังกฤษเท่านั้น ตัวเลขไม่เอา"
-            required
-          /> -->
-            <!--  กำหนดให้ใช้ ไทย  เท่านั้น-->
-
-            <div class="code-java">
-              <div class="test1" id="test1">
-                <label for="branch">สาขา</label>
-                <select id="b1" required>
-                  <option value="0" disabled selected>-</option>
-                  <option value="1">เกษตรศาสตร์</option>
-                  <option value="2">พืชสวน</option>
-                </select>
-              </div>
-
-              <div class="test2" id="test2">
-                <label for="aranch">สาขา</label>
-                <select id="b2" required>
-                  <option value="0" disabled selected>-</option>
-                  <option value="1">เทคโนโลยีการอาหาร</option>
-                  <option value="2">เทคโนโลยีอุตสาหการ การผลิต</option>
-                  <option value="3">เทคโนโลยีพอลิเมอร์</option>
-                  <option value="4">วิศวกรรมเกษตร</option>
-                  <option value="5">วิศวกรรมอาหาร</option>
-                </select>
-              </div>
-            </div>
-
-            <div class="test3" id="test3">
-              <label for="aranch">สาขา</label>
-              <select id="b3" required>
-                <option value="0" disabled selected>-</option>
-                <option value="1">คณิตศาสตร์</option>
-                <option value="2">เคมี</option>
-                <option value="3">เทคโนโลยีชีวภาพ</option>
-                <option value="4">ฟิสิกส์</option>
-                <option value="5">วัสดุศาสตร์</option>
-                <option value="6">สถิติ</option>
-                <option value="7">วิทยาศาสตร์และเทคโนโลยี</option>
-                <option value="8">เทคโนโลยีสารสนเทศ</option>
-                <option value="9">วิทยาการคอมพิวเตอร์</option>
-              </select>
-            </div>
-            <div class="test3" id="test4">
-              <label for="aranch">สาขา</label>
-              <select id="b4" required>
-                <option value="0" disabled selected>-</option>
-                <option value="1">รัฐประศาสนศาสตร์</option>
-                <option value="2">รัฐศาสตร์</option>
-              </select>
-            </div>
-            <div class="test3" id="test5">
-              <label for="aranch">สาขา</label>
-              <select id="b5" required>
-                <option value="0" disabled selected>-</option>
-                <option value="1">การเงิน</option>
-                <option value="2">การจัดการ</option>
-                <option value="3">การบัญชี</option>
-                <option value="4">การตลาด</option>
-                <option value="5">ระบบสารสนเทศ</option>
-              </select>
-            </div>
-            <div class="test3" id="test6">
-              <label for="aranch">สาขา</label>
-              <select id="b5"  required>
-                <option value="0" disabled selected>-</option>
-                <option value="1">การท่องเที่ยวและการโรงแรม</option>
-              </select>
-            </div>
-            <div class="test3" id="test7">
-              <label for="aranch">สาขา</label>
-              <select id="b5" required>
-                <option value="0" disabled selected>-</option>
-                <option value="1">ประมง</option>
-              </select>
-            </div>
-            <div class="test3" id="test8">
-              <label for="aranch">สาขา</label>
-              <select id="b5" required>
-                <option value="0" disabled selected>-</option>
-                <option value="1">เศรษฐศาสตร์</option>
-              </select>
-            </div>
-            <div class="test3" id="test9">
-              <label for="aranch">สาขา</label>
-              <select id="b5" required>
-                <option value="0" disabled selected>-</option>
-                <option value="1">นิเทศศาสตร์</option>
-                <option value="2">อังกฤษ</option>
-              </select>
-            </div>
-            <div class="test3" id="test10">
-              <label for="aranch">สาขา</label>
-              <select id="b5" >
-                <option value="0" disabled selected>-</option>
-                <option value="1">วิศวกรรมพลังงาน</option>
-              </select>
-            </div>
-            <div class="test3" id="test11">
-              <label for="aranch">สาขา</label>
-              <select id="b5" required>
-                <option value="0" disabled selected>-</option>
-                <option value="1">ดิจิทัล</option>
-              </select>
-            </div>
-            <div class="test3" id="test12">
-              <label for="aranch">สาขา</label>
-              <select id="b5" required>
-                <option value="0" disabled selected>-</option>
-                <option value="1">ภูมิสถาปัตยกรรม</option>
-                <option value="2">วางแผนภาคและเมือง</option>
-                <option value="3">สถาปัตยกรรม</option>
-              </select>
-            </div>
-            <div class="test3" id="test13">
-              <label for="aranch">สาขา</label>
-              <select id="b5" required>
-                <option value="0" disabled selected>-</option>
-                <option value="1">สัตวศาสตร์</option>
-              </select>
-            </div>
-
-            <label class="mt-3" for="phone">โทรศัพทมือถือ</label>
-            <input
-              type="text"
-              id="phone"
-              name="phone"
-              pattern="[0-9]{10}"
-              title="กรุณากรอกเบอร์โทรศัพท์มือถือ 10 ตัว ให้ถูกต้อง"
-              required
-            />
-            <!-- กำหนดให้ใช้เลข 0-9 และ กำหนดให้มี 10 ตัว -->
-          </div>
-
-          <label for="" class="mt-3">หลักสูตร ปริญญาตรี</label>
-          <input type="radio" name="tit" value="4" required />
-          <label for="">4-5 ปี</label>
-
-          <input type="radio" name="tit" value="2" required />
-          <label for="">4 ปี (เทียบเข้าเรียน 2 ปี)</label>
-
-          <label class="mt-3" for="">ภาคเรียน</label>
-
-          <input type="radio" name="semester" value="ภาคปกติ" required />
-          <label for="">ภาคปกติ</label>
-
-          <input type="radio" name="semester" value="ภาคสมทบ" required />
-          <label for="">ภาคสมทบ</label>
-
-          <label class="mt-3" for="reason"
-            >มีความประสงค์จะขอลาออก เนื่องจาก</label
-          >
-          <div class="reason">
-            <textarea
-              name="reason"
-              id="reason"
-              cols="100"
-              rows="5"
-              required
-            ></textarea>
-          </div>
-          <div class="button-click mt-3">
-
-              <button type="submit">Submit</button>
-              <button class="btn btn-danger h-25" type="reset">Reset</button>
-          </div>
-        </form>
-      </div>
-    </div>
-
-    <script src="/branch.js"></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
-      crossorigin="anonymous"
-    ></script>
   </body>
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+    crossorigin="anonymous"
+  ></script>
 </html>
