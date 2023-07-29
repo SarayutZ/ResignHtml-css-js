@@ -25,139 +25,238 @@
     </div>
     <div class="container">
       <form action="process_form.php" method="post">
-        <div class="date-time">
+        <div class="f1">
           <h2>เรื่อง ลาออก</h2>
-          <label class="fw-bold" for="">ว/ด/ป</label>
-          <input type="date" name="date" required />
-        </div>
+          <div class="date-time">
+            <label class="fw-bold" for="">ว/ด/ป</label>
+            <input type="date" name="date" required />
+          </div>
 
-        <div class="gender-name-stpass">
-          <label class="fw-bold" for="fname">ข้าพเจ้า</label>
+          <div class="gender-name-stpass">
+            <label class="fw-bold" for="fname">ข้าพเจ้า</label>
 
-          <input type="radio" name="title" id="title_mr" value="นาย" required />
-          <label for="title_mr">นาย</label>
-
-          <input
-            type="radio"
-            name="title"
-            id="title_mrs"
-            value="นาง"
-            required
-          />
-          <label for="title_mrs">นาง</label>
-
-          <input
-            type="radio"
-            name="title"
-            id="title_miss"
-            value="นางสาว"
-            required
-          />
-          <label for="title_miss">นางสาว</label>
-
-          <div class="name-lastname-password">
-            <label class="fw-bold" for="fname-lname">ชื่อ-นามสกุล</label>
             <input
-              type="text"
-              name="other_title"
-              pattern="[ก-๙a-zA-Zะ-์]*\s[ก-๙a-zA-Zะ-์]*(\s[ก-๙a-zA-Zะ-์]*)?"
-              title="กรุณากรอกภาษาไทยหรืออังกฤษเท่านั้น ตัวเลขไม่เอา และ ให้เว้น ชื่อ กับ ชื่อ กับ นามสกุล ด้วย"
-              maxlength="25"
+              type="radio"
+              name="title"
+              id="title_mr"
+              value="นาย"
               required
             />
-            <br />
-            <label class="fw-bold" for="student_id">รหัสนักศึกษา</label>
+            <label for="title_mr">นาย</label>
 
             <input
+              type="radio"
+              name="title"
+              id="title_mrs"
+              value="นาง"
+              required
+            />
+            <label for="title_mrs">นาง</label>
+
+            <input
+              type="radio"
+              name="title"
+              id="title_miss"
+              value="นางสาว"
+              required
+            />
+            <label for="title_miss">นางสาว</label>
+
+            <div class="name-lastname-password">
+              <label class="fw-bold" for="fname-lname">ชื่อ-นามสกุล</label>
+              <input
+                type="text"
+                name="other_title"
+                pattern="[ก-๙a-zA-Zะ-์]*\s[ก-๙a-zA-Zะ-์]*(\s[ก-๙a-zA-Zะ-์]*)?"
+                title="กรุณากรอกภาษาไทยหรืออังกฤษเท่านั้น ตัวเลขไม่เอา และ ให้เว้น ชื่อ กับ ชื่อ กับ นามสกุล ด้วย"
+                maxlength="25"
+                required
+              />
+              <br />
+              <label class="fw-bold" for="student_id">รหัสนักศึกษา</label>
+
+              <input
+                type="text"
+                id="student_id"
+                name="student_id"
+                pattern="[0-9]{10,10}"
+                title="กรุณากรอกรหัสนักศึกษาเป็นตัวเลขไม่เกิน 10 ตัว หรือ น้อยกว่า 10 "
+                required
+              />
+            </div>
+          </div>
+
+          <label class="fw-bold" for="faculty">เลือกคณะ </label>
+          <select
+            class="w-50"
+            id="faculty"
+            name="faculty"
+            onchange="displayBranches()"
+            required
+          >
+            <option value="">กรุณาเลือกคณะ</option>
+            <option value="Agricultural">คณะผลิตกรรมการเกษตร</option>
+            <option value="Engineering">คณะวิศวกรรมและอุตสาหกรรมเกษตร</option>
+            <option value="Science">คณะวิทยาศาสตร์</option>
+            <option value="Administration">วิทยาลัยบริหารศาสตร์</option>
+            <option value="Business">คณะบริหารธุรกิจ</option>
+            <option value="Tourism">คณะพัฒนาการท่องเที่ยว</option>
+            <option value="Fisheries">
+              คณะเทคโนโลยีการประมงและทรัพยากรทางน้ำ
+            </option>
+            <option value="Economics">คณะเศรษฐศาสตร์</option>
+            <option value="Arts">คณะศิลปศาสตร์</option>
+            <option value="energy">วิทยาลัยพลังงานทดแทน</option>
+            <option value="Information">คณะสารสนเทศและการสื่อสาร</option>
+            <option value="Architecture">
+              คณะสถาปัตยกรรมศาสตร์และการออกแบบสิ่งแวดล้อม
+            </option>
+            <option value="Animal">คณะสัตวศาสตร์และเทคโนโลยี</option>
+
+            <!-- ถ้าคุณมีคณะอื่นๆให้เพิ่มตรงนี้ -->
+          </select>
+
+          <div id="branchContainer">
+            <label class="fw-bold" for="branch">สาขา</label>
+            <select class="w-50" id="branch" name="branch" required>
+              <!-- ตัวเลือกของสาขาจะถูกสร้างขึ้นโดย JavaScript -->
+            </select>
+          </div>
+        </div>
+
+        <div class="f2">
+          <div class="phone-number">
+            <label class="fw-bold" for="phone">โทรศัพทมือถือ</label>
+            <input
               type="text"
-              id="student_id"
-              name="student_id"
-              pattern="[0-9]{10,10}"
-              title="กรุณากรอกรหัสนักศึกษาเป็นตัวเลขไม่เกิน 10 ตัว หรือ น้อยกว่า 10 "
+              id="phone"
+              name="phone"
+              pattern="[0-9]{10}"
+              title="กรุณากรอกเบอร์โทรศัพท์มือถือ 10 ตัว ให้ถูกต้อง"
+              required
+            />
+          </div>
+
+          <div class="choses1">
+            <label for="" class="fw-bold">หลักสูตร ปริญญาตรี</label>
+            <input type="radio" name="tit" value="4" required />
+            <label for="">4-5 ปี</label>
+
+            <input
+              type="radio"
+              name="tit"
+              value="2"
+              required
+            />
+            <label for="">4 ปี (เทียบเข้าเรียน 2 ปี)</label>
+          </div>
+          <div class="choses2">
+            <label class="fw-bold" for="">ภาคเรียน</label>
+
+            <input type="radio" name="semester" value="ภาคปกติ" required />
+            <label for="">ภาคปกติ</label>
+
+            <input type="radio" name="semester" value="ภาคสมทบ" required />
+            <label for="">ภาคสมทบ</label>
+          </div>
+
+          <label for="reason">มีความประสงค์จะขอลาออก เนื่องจาก</label>
+          <div class="reason">
+            <textarea
+              name="reason"
+              id="reason"
+              cols="60"
+              rows="5"
+              required
+            ></textarea>
+          </div>
+
+          <div class="signature">
+            <label for="signature">ลายเซ็น</label>
+            <input
+              type="text"
+              name="signature"
+              placeholder="นักศึกษา"
+              id="signature"
               required
             />
           </div>
         </div>
 
-        <label class="fw-bold" for="faculty">เลือกคณะ </label>
-        <select
-          class="w-25"
-          id="faculty"
-          name="faculty"
-          onchange="displayBranches()"
-          required
-        >
-          <option value="">กรุณาเลือกคณะ</option>
-          <option value="Agricultural">คณะผลิตกรรมการเกษตร</option>
-          <option value="Engineering">คณะวิศวกรรมและอุตสาหกรรมเกษตร</option>
-          <option value="Science">คณะวิทยาศาสตร์</option>
-          <option value="Administration">วิทยาลัยบริหารศาสตร์</option>
-          <option value="Business">คณะบริหารธุรกิจ</option>
-          <option value="Tourism">คณะพัฒนาการท่องเที่ยว</option>
-          <option value="Fisheries">
-            คณะเทคโนโลยีการประมงและทรัพยากรทางน้ำ
-          </option>
-          <option value="Economics">คณะเศรษฐศาสตร์</option>
-          <option value="Arts">คณะศิลปศาสตร์</option>
-          <option value="energy">วิทยาลัยพลังงานทดแทน</option>
-          <option value="Information">คณะสารสนเทศและการสื่อสาร</option>
-          <option value="Architecture">
-            คณะสถาปัตยกรรมศาสตร์และการออกแบบสิ่งแวดล้อม
-          </option>
-          <option value="Animal">คณะสัตวศาสตร์และเทคโนโลยี</option>
+        <div class="coment-teacher">
+          <div class="box1">
 
-          <!-- ถ้าคุณมีคณะอื่นๆให้เพิ่มตรงนี้ -->
-        </select>
+            <div class="comment-1">
+              <h5>ความเห็นอาจารย์ที่ปรึกษา</h5>
+              <input type="checkbox" name="understand" id="understand" required>
+              <label for="understand">ทราบ</label><br/>
+              <input id="input-comment" placeholder="ชื่อ" type="text" >
+            </div>
+            
+            <div class="comment-1">
+              <h5>ความเห็นประธานอาจารย์ประจําหลักสูตร</h5>
+              <input type="checkbox" name="understand" id="understand" required>
+              <label for="understand">ทราบ</label><br/>
+              <input id="input-comment" placeholder="ชื่อ" type="text" >
+            </div>
 
-        <div id="branchContainer">
-          <label class="fw-bold" for="branch">สาขา</label>
-          <select id="branch" name="branch" required>
-            <option value="ไอ้เชี้ยเว็บกาก">smile</option>
+          </div>
+          <div class="box2">
 
-            <!-- ตัวเลือกของสาขาจะถูกสร้างขึ้นโดย JavaScript -->
-          </select>
+            <div class="comment-1">
+              <h5>ความเห็นคณบดี</h5>
+              <input type="checkbox" name="understand" id="understand" required>
+              <label for="understand">ทราบ</label><br/>
+              <input id="input-comment" placeholder="ชื่อ" type="text" >
+            </div>
+            
+            <div class="comment-1">
+              <h5>ความเห็นผู้อํานวยการสํานักบริหารและพัฒนาวิชาการ</h5>
+              <input type="checkbox" name="understand" id="understand" required>
+              <label for="understand">ทราบ</label><br/>
+              <input id="input-comment" placeholder="ชื่อ" type="text" >
+            </div>
+
+          </div>
+          <div class="box3">
+
+            <div class="comment-1">
+              <h5>ความเห็นอธิการบดี</h5>
+              
+              <input type="radio" name="argee" id="argee">
+              <label for="understand">อนุมัติ</label>
+              <input type="radio" name="noargee" id="noargee">
+              <label for="understand">ไม่อนุมัติ</label>
+              <input id="input-comment" placeholder="ชื่อ" type="text" >
+            </div>
+            
+            <div class="comment-1">
+              <h5>ความเห็นหัวหน้ากลุ่มภารกิจทะเบียนเรียน ประมวลผลฯ </h5>
+
+              <textarea name="" id="" cols="40" rows="5"></textarea>
+              <input  id="input-comment" placeholder="ชื่อ" type="text" >
+            </div>
+
+          </div>
+          <div class="box4">
+
+            <div class="comment-1">
+              <h5>ความเห็นหัวหน้ากลุ่มภารกิจทะเบียนเรียน ประมวลผลฯ</h5>
+              <input type="checkbox" name="understand" id="understand" required>
+              <label for="understand">ทราบ</label><br/>
+              <input id="input-comment" placeholder="ชื่อ" type="text" >
+            </div>
+            
+            <div class="comment-1">
+              <h5>สําหรับเจ้าหน้าที่บันทึกลงฐานข้อมูล </h5>
+              <input type="checkbox" name="understand" id="understand" required>
+              <label for="understand">ทราบ</label><br/>
+              <input id="input-comment" placeholder="ชื่อ" type="text" >
+            </div>
+
+          </div>
         </div>
 
-        <div class="phone-number">
-          <label class="fw-bold" for="phone">โทรศัพทมือถือ</label>
-          <input
-            type="text"
-            id="phone"
-            name="phone"
-            pattern="[0-9]{10}"
-            title="กรุณากรอกเบอร์โทรศัพท์มือถือ 10 ตัว ให้ถูกต้อง"
-            required
-          />
-        </div>
-
-        <div class="choses1">
-          <label for="" class="fw-bold">หลักสูตร ปริญญาตรี</label>
-          <input type="radio" name="tit" value="4" required />
-          <label for="">4-5 ปี</label>
-
-          <input type="radio" name="tit" value="2" required />
-          <label for="">4 ปี (เทียบเข้าเรียน 2 ปี)</label>
-        </div>
-        <div class="choses2">
-          <label class="fw-bold" for="">ภาคเรียน</label>
-
-          <input type="radio" name="semester" value="ภาคปกติ" required />
-          <label for="">ภาคปกติ</label>
-
-          <input type="radio" name="semester" value="ภาคสมทบ" required />
-          <label for="">ภาคสมทบ</label>
-        </div>
-
-        <label for="reason">มีความประสงค์จะขอลาออก เนื่องจาก</label>
-        <div class="reason">
-          <textarea
-            name="reason"
-            id="reason"
-            cols="60"
-            rows="5"
-            required
-          ></textarea>
-        </div>
 
         <div class="button">
           <button type="submit">submit</button>

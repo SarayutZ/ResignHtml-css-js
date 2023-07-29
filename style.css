@@ -1,13 +1,14 @@
-/* Body background color and font color */
+
 body {
-  background-color: #f0f8ea; /* Light green */
-  color: #00563f; /* Dark green */
+  background-color: #f0f8ea; 
+  color: #00563f; 
   margin-bottom: 50px;
+
 }
 
-/* Head styling */
+
 .head {
-  background-color: #00563f; /* Dark green */
+  background-color: #00563f; 
   color: white;
   padding: 10px;
   text-align: center;
@@ -18,41 +19,64 @@ body {
   height: 100px;
 }
 
-/* Container styling */
 .container {
   margin-top: 20px;
   padding: 20px;
-  border: 2px solid #00563f; /* Dark green */
+  border: 2px solid #00563f; 
   border-radius: 5px;
+  display: flex;
 }
 
-/* Form element styling */
 form {
   display: flex;
   flex-direction: column;
 }
 
 h2 {
-  color: #297904; /* Dark green */
+  color: #297904; 
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+h5 {
+  color: #5eb13b; 
   font-weight: bold;
   margin-bottom: 10px;
 }
 
 label {
-  color: #000000; /* Dark green */
+  color: #000000; 
   margin-top: 10px;
-  font-size: 24px;
+  font-size: 18px;
 }
 
+/*  */
 input[type="text"],
 input[type="date"],
+select {
+  border: none;
+  border-bottom: 2px solid #006400; /* ขีดใต้ข้อความสีเขียว */
+  border-radius: 4%; /* ไม่มีขอบโค้ง */
+  padding: 10px;
+  font-size: 16px;
+  color: #055105; /* สีข้อความใน input และ textarea */
+}
 textarea {
-  border: 1px solid #00563f; /* Dark green */
-  border-radius: 5px;
-  padding: 5px;
+  border-radius: 2%;
+}
+
+input[type="text"]:focus,
+input[type="date"]:focus,
+select:focus,
+textarea:focus {
+  border-bottom: 2px solid #006400;
 }
 
 input[type="radio"] {
+  margin-right: 5px;
+  margin-left: 20px;
+}
+input[type="checkbox"] {
   margin-right: 5px;
   margin-left: 20px;
 }
@@ -64,30 +88,70 @@ select {
 }
 
 /* ... Existing CSS code ... */
-.button{
-  display: flex;
+
+.button {
+  
+  justify-content: center; /* กำหนดให้ปุ่มอยู่กึ่งกลางแนวนอน */
+  align-items: center; /* กำหนดให้ปุ่มอยู่กึ่งกลางแนวตั้ง */
+  margin-top: 20px; /* ระยะห่างของ container ไปยังขอบบนของหน้าจอ */
+  margin-left: 20px;
 }
 button[type="reset"],
 button[type="submit"] {
-  background-color: #00563f; /* Dark green */
-  width: 10%;
+  background-color: #00563f; 
+  width: 100%;
   color: white;
   border: none;
   border-radius: 5px;
-  padding: 5px 15px; /* Smaller padding */
+  padding: 5px 15px; 
   cursor: pointer;
   margin-top: 10px;
-  font-size: 14px; /* Smaller font size */
-  margin: 10px;
+  font-size: 14px; 
+  margin-left: 60px;
 }
 
 button[type="reset"] {
-  background-color: #d14545; /* Red */
+  background-color: #d14545; 
 }
 
-button[type="reset"]:hover,
 button[type="submit"]:hover {
-  background-color: #21825b; /* Darker green */
+  background-color: #21825b; 
+}
+button[type="reset"]:hover{
+  background-color: #eb7171; 
+}
+.f1,
+.f2,
+form {
+  display: inline-block;
+}
+.f1 {
+  margin-top: 0px;
+  margin-left: 180px;
+}
+.f2 {
+  margin-top: 50px;
 }
 
 
+.coment-teacher {
+  margin-left: 20px;
+  flex-direction: row; /* ควบคุมให้เนื้อหาแสดงแนวนอน */
+}
+.box1,.box2,.box3,.box4 {
+  display: flex;
+  width: 100%; /* ตัวเลือกนี้จำเป็นในบางกรณี */
+  margin-bottom: 20px;
+  margin-top: 20px;
+  
+}
+.comment-1 {
+  margin-left: 150px;
+  padding: 10px;
+  border: 1px solid #000;
+  background-color: #d9e3d9;
+  width: 380px;
+}
+#input-comment{
+  margin: 20px;
+}

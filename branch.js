@@ -52,4 +52,6 @@ function displayBranches() {
     // ซ่อนเลือกสาขาเมื่อยังไม่ได้เลือกคณะ
     document.getElementById("branchContainer").style.display = "none";
   }
+  
 }
+
