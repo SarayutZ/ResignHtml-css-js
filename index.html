@@ -24,7 +24,7 @@
       <h3>คำร้องลาออก</h3>
     </div>
     <div class="container">
-      <form action="process_form.php" method="post">
+      <form action="submit.html" >
         <div class="f1">
           <h2>เรื่อง ลาออก</h2>
           <div class="date-time">
@@ -190,14 +190,14 @@
               <h5>ความเห็นอาจารย์ที่ปรึกษา</h5>
               <input type="checkbox" name="understand" id="understand" required>
               <label for="understand">ทราบ</label><br/>
-              <input id="input-comment" placeholder="ชื่อ" type="text" >
+              <input id="input-comment" placeholder="ชื่อ" type="text" pattern="[ก-๙a-zA-Zะ-์]*\s[ก-๙a-zA-Zะ-์]*(\s[ก-๙a-zA-Zะ-์]*)?"  required>
             </div>
             
             <div class="comment-1">
               <h5>ความเห็นประธานอาจารย์ประจําหลักสูตร</h5>
               <input type="checkbox" name="understand" id="understand" required>
               <label for="understand">ทราบ</label><br/>
-              <input id="input-comment" placeholder="ชื่อ" type="text" >
+              <input id="input-comment" placeholder="ชื่อ" pattern="[ก-๙a-zA-Zะ-์]*\s[ก-๙a-zA-Zะ-์]*(\s[ก-๙a-zA-Zะ-์]*)?" type="text" required>
             </div>
 
           </div>
@@ -207,14 +207,14 @@
               <h5>ความเห็นคณบดี</h5>
               <input type="checkbox" name="understand" id="understand" required>
               <label for="understand">ทราบ</label><br/>
-              <input id="input-comment" placeholder="ชื่อ" type="text" >
+              <input id="input-comment" placeholder="ชื่อ" pattern="[ก-๙a-zA-Zะ-์]*\s[ก-๙a-zA-Zะ-์]*(\s[ก-๙a-zA-Zะ-์]*)?" type="text" required>
             </div>
             
             <div class="comment-1">
               <h5>ความเห็นผู้อํานวยการสํานักบริหารและพัฒนาวิชาการ</h5>
               <input type="checkbox" name="understand" id="understand" required>
               <label for="understand">ทราบ</label><br/>
-              <input id="input-comment" placeholder="ชื่อ" type="text" >
+              <input id="input-comment" placeholder="ชื่อ" pattern="[ก-๙a-zA-Zะ-์]*\s[ก-๙a-zA-Zะ-์]*(\s[ก-๙a-zA-Zะ-์]*)?" type="text" required>
             </div>
 
           </div>
@@ -223,18 +223,18 @@
             <div class="comment-1">
               <h5>ความเห็นอธิการบดี</h5>
               
-              <input type="radio" name="argee" id="argee">
+              <input type="radio" name="argee" id="argee" pattern="[ก-๙a-zA-Zะ-์]*\s[ก-๙a-zA-Zะ-์]*(\s[ก-๙a-zA-Zะ-์]*)?" required>
               <label for="understand">อนุมัติ</label>
-              <input type="radio" name="noargee" id="noargee">
+              <input type="radio" name="argee" id="argee" required>
               <label for="understand">ไม่อนุมัติ</label>
-              <input id="input-comment" placeholder="ชื่อ" type="text" >
+              <input id="input-comment" placeholder="ชื่อ" type="text" pattern="[ก-๙a-zA-Zะ-์]*\s[ก-๙a-zA-Zะ-์]*(\s[ก-๙a-zA-Zะ-์]*)?" required>
             </div>
             
             <div class="comment-1">
               <h5>ความเห็นหัวหน้ากลุ่มภารกิจทะเบียนเรียน ประมวลผลฯ </h5>
 
-              <textarea name="" id="" cols="40" rows="5"></textarea>
-              <input  id="input-comment" placeholder="ชื่อ" type="text" >
+              <textarea name="" id="" cols="40" rows="5" required></textarea>
+              <input  id="input-comment" placeholder="ชื่อ" type="text" pattern="[ก-๙a-zA-Zะ-์]*\s[ก-๙a-zA-Zะ-์]*(\s[ก-๙a-zA-Zะ-์]*)?" required>
             </div>
 
           </div>
@@ -244,14 +244,14 @@
               <h5>ความเห็นหัวหน้ากลุ่มภารกิจทะเบียนเรียน ประมวลผลฯ</h5>
               <input type="checkbox" name="understand" id="understand" required>
               <label for="understand">ทราบ</label><br/>
-              <input id="input-comment" placeholder="ชื่อ" type="text" >
+              <input id="input-comment" placeholder="ชื่อ" type="text" pattern="[ก-๙a-zA-Zะ-์]*\s[ก-๙a-zA-Zะ-์]*(\s[ก-๙a-zA-Zะ-์]*)?" required>
             </div>
             
             <div class="comment-1">
               <h5>สําหรับเจ้าหน้าที่บันทึกลงฐานข้อมูล </h5>
               <input type="checkbox" name="understand" id="understand" required>
               <label for="understand">ทราบ</label><br/>
-              <input id="input-comment" placeholder="ชื่อ" type="text" >
+              <input id="input-comment" placeholder="ชื่อ" type="text" pattern="[ก-๙a-zA-Zะ-์]*\s[ก-๙a-zA-Zะ-์]*(\s[ก-๙a-zA-Zะ-์]*)?" required>
             </div>
 
           </div>

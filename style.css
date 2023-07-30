@@ -1,7 +1,6 @@
 
 body {
   background-color: #f0f8ea; 
-  color: #00563f; 
   margin-bottom: 50px;
 
 }
@@ -29,7 +28,7 @@ body {
 
 form {
   display: flex;
-  flex-direction: column;
+ 
 }
 
 h2 {
