@@ -55,7 +55,7 @@ input[type="date"],
 select {
   border: none;
   border-bottom: 2px solid #006400; /* ขีดใต้ข้อความสีเขียว */
-  border-radius: 4%; /* ไม่มีขอบโค้ง */
+  border-radius: 4%; 
   padding: 10px;
   font-size: 16px;
   color: #055105; /* สีข้อความใน input และ textarea */
@@ -81,12 +81,12 @@ input[type="checkbox"] {
 }
 
 select {
-  border: 1px solid #00563f; /* Dark green */
+  border: 1px solid #00563f; 
   border-radius: 5px;
   padding: 5px;
 }
 
-/* ... Existing CSS code ... */
+
 
 .button {
   
@@ -135,11 +135,11 @@ form {
 
 .coment-teacher {
   margin-left: 20px;
-  flex-direction: row; /* ควบคุมให้เนื้อหาแสดงแนวนอน */
+  flex-direction: row; 
 }
 .box1,.box2,.box3,.box4 {
   display: flex;
-  width: 100%; /* ตัวเลือกนี้จำเป็นในบางกรณี */
+  width: 100%; 
   margin-bottom: 20px;
   margin-top: 20px;
   
